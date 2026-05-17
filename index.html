@@ -1,130 +1,361 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Rockstar Technologies</title>
+    <title>A Rockstar Company</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(to right, #0f172a, #1e293b);
+            color:white;
+            line-height:1.7;
+        }
+
+        /* NAVIGATION */
+        .nav{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:20px;
+            padding:20px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .nav a{
+            text-decoration:none;
+            color:white;
+            font-weight:bold;
+            padding:10px 18px;
+            border-radius:30px;
+            transition:0.3s;
+        }
+
+        .nav a:hover{
+            background:#38bdf8;
+            color:#000;
+            transform:translateY(-3px);
+        }
+
+        hr{
+            border:1px solid rgba(255,255,255,0.15);
+        }
+
+        /* MAIN CONTENT */
+        .center{
+            max-width:1200px;
+            margin:auto;
+            padding:30px 20px;
+        }
+
+        h1{
+            text-align:center;
+            font-size:3rem;
+            margin-bottom:15px;
+            color:#38bdf8;
+        }
+
+        h2, h3{
+            margin:20px 0;
+            color:#facc15;
+        }
+
+        p{
+            margin-bottom:15px;
+        }
+
+        #November-color{
+            color:#ff4d6d;
+            font-weight:bold;
+        }
+
+        /* PRODUCT LIST */
+        ul.index{
+            list-style:none;
+            margin-top:20px;
+        }
+
+        ul.index > li{
+            margin-bottom:30px;
+            padding:20px;
+            background:rgba(255,255,255,0.08);
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        img{
+            width:100%;
+            max-width:300px;
+            border-radius:15px;
+            margin-top:10px;
+            transition:0.4s;
+            cursor:pointer;
+        }
+
+        img:hover{
+            transform:scale(1.05);
+        }
+
+        a{
+            color:#38bdf8;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        a:hover{
+            color:#facc15;
+        }
+
+        /* BUTTON STYLE */
+        .promo-btn{
+            display:inline-block;
+            margin-top:10px;
+            background:#38bdf8;
+            color:#000;
+            padding:10px 20px;
+            border-radius:30px;
+            transition:0.3s;
+        }
+
+        .promo-btn:hover{
+            background:#facc15;
+            transform:scale(1.05);
+        }
+
+        .goldenrod{
+            color:gold;
+            font-weight:bold;
+        }
+
+        /* SOCIAL MEDIA */
+        .socials{
+            display:flex;
+            gap:15px;
+            margin-top:15px;
+        }
+
+        .socials img{
+            width:40px;
+            height:40px;
+            border-radius:50%;
+            background:white;
+            padding:5px;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background:rgba(0,0,0,0.3);
+            margin-top:30px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media(max-width:768px){
+
+            .nav{
+                flex-direction:column;
+                gap:10px;
+            }
+
+            h1{
+                font-size:2.2rem;
+            }
+
+            body{
+                font-size:15px;
+            }
+        }
+
+        /* SCROLL ANIMATION */
+        .fade-in{
+            opacity:0;
+            transform:translateY(30px);
+            transition:all 1s ease;
+        }
+
+        .fade-in.show{
+            opacity:1;
+            transform:translateY(0);
+        }
+    </style>
 </head>
 
-<body style="
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f4f7fb;
-    color:#333;
-">
+<body>
 
-    <!-- Navigation -->
-    <div style="
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        flex-wrap:wrap;
-        gap:15px;
-        background:#0d6efd;
-        padding:18px;
-        box-shadow:0 2px 10px rgba(0,0,0,0.15);
-    ">
-        <a href="./index.html" style="
-            color:white;
-            text-decoration:none;
-            font-weight:bold;
-            padding:10px 18px;
-            border-radius:8px;
-            background:rgba(255,255,255,0.15);
-            transition:0.3s;
-        ">HOME</a>
-
-        <a href="./public/about.html" style="
-            color:white;
-            text-decoration:none;
-            font-weight:bold;
-            padding:10px 18px;
-            border-radius:8px;
-            background:rgba(255,255,255,0.15);
-            transition:0.3s;
-        ">ABOUT US</a>
-
-        <a href="./public/contact.html" style="
-            color:white;
-            text-decoration:none;
-            font-weight:bold;
-            padding:10px 18px;
-            border-radius:8px;
-            background:rgba(255,255,255,0.15);
-            transition:0.3s;
-        ">CONTACT US</a>
+    <div class="nav">
+        <a href="./index.html">HOME</a>
+        <a href="./public/about.html">ABOUT US</a>
+        <a href="./public/contact.html">CONTACT US</a>
     </div>
 
-    <!-- Main Content -->
-    <div style="
-        max-width:900px;
-        margin:50px auto;
-        background:white;
-        padding:35px;
-        border-radius:18px;
-        box-shadow:0 5px 20px rgba(0,0,0,0.08);
-        text-align:center;
-    ">
+    <hr>
 
-        <h1 style="
-            font-size:clamp(2rem, 5vw, 3.5rem);
-            color:#0d6efd;
-            margin-bottom:20px;
-        ">
-            Welcome to ART New Website
-        </h1>
+    <div class="center fade-in">
 
-        <p style="
-            font-size:clamp(1rem, 2vw, 1.2rem);
-            line-height:1.8;
-            color:#444;
-            margin-bottom:18px;
-        ">
+        <h1>Welcome to ARC</h1>
+
+        <p><i>ART is an E Commerce and Software Development company founded by Software Developer SOLO</i></p>
+
+        <p><i>Enjoy lifetime access to any goods at the import rate and qualify for all our Promo and Offers.</i></p>
+
+        <p><i>You stand a chance to win a 2x fast charger on Easter Day 2025!</i></p>
+
+        <h2><span id="November-color">Easter Day</span> Promo <i>April 19 - 30</i></h2>
+
+        <i>This promo is for our users that love using the internet.</i>
+
+        <ul class="index">
+
+            <li class="fade-in">
+                <h2>Tablet PC</h2>
+
+                <ol>
+                    <li>Link 8 Tablet PC - Fairly Used N59,000</li>
+                </ol>
+
+                <img src="https://static.wixstatic.com/media/9a7e77_abfce5c98264498b9d02e655ac3d91c4~mv2.jpg/v1/fill/w_440,h_440,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9a7e77_abfce5c98264498b9d02e655ac3d91c4~mv2.jpg" alt="Link 8 Tablet PC">
+
+                <br>
+
+                <a class="promo-btn" href="https://www.instagram.com/a_r_c_2025/">To Promo</a>
+            </li>
+
+            <li class="fade-in">
+                <h2>Flash Drives</h2>
+
+                <ol>
+                    <li>128GB - N9000</li>
+                    <li>64GB 3 in 1 - N7000</li>
+                    <li>32GB 3 in 1 - N6900</li>
+                </ol>
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/SanDisk_Ultra_Flair_128GB_%28Rear%29.jpg" alt="Flash Drive">
+                <br><br>
+
+                <a class="promo-btn" href="https://www.instagram.com/a_r_c_2025/">To Promo</a>
+            </li>
+
+            <li class="fade-in">
+                <h2>Internet Hardware</h2>
+
+                <ol>
+                    <li>MTN Pocket MiFi - N17,500 with Free 30GB</li>
+                    <li>MTN Router - N22,500 with Free 50GB</li>
+                </ol>
+
+                <img src="https://shop.mtn.ng/media/catalog/product/cache/fa2d7f8322a901d3e35e3639d4fcc28a/m/t/mtn-broadband-mifi-whites.png" alt="MTN MiFi">
+
+                <br>
+
+                <a class="promo-btn" href="https://www.instagram.com/a_r_c_2025/">To Promo</a>
+            </li>
+
+        </ul>
+
+        <h3>How To Qualify for the Promo</h3>
+
+        <ol>
+            <li>Visit our shop</li>
+            <li>Buy any item worth N1000</li>
+        </ol>
+
+        <hr>
+
+        <h2>Our Winners For This Week</h2>
+
+        <ol reversed>
+            <li>James Ibi ★★★</li>
+            <li>Monica Egbe ★★★★</li>
+            <li class="goldenrod">Obio Derek ★★★★★</li>
+        </ol>
+
+        <p>
             <i>
-                ART is an E Commerce and Software Development company founded by Software Developer SOLO.
+                ARC is the place <br>
+                ARC is the best
             </i>
         </p>
 
-        <p style="
-            font-size:clamp(1rem, 2vw, 1.15rem);
-            line-height:1.8;
-            color:#555;
-            margin-bottom:18px;
-        ">
-            <i>
-                Enjoy lifetime access to any goods at the import rate and
-                qualify for all our Promo and Offers whenever they are on.
-            </i>
+        <hr>
+
+        <p>
+            <a href="./public/computer services.html">Computer Services</a> |
+            <a href="./public/phone accessories shop.html">Phone Accessories Shop</a>
         </p>
 
-        <p style="
-            font-size:clamp(1rem, 2vw, 1.15rem);
-            line-height:1.8;
-            color:#e63946;
-            font-weight:bold;
-            margin-bottom:25px;
-        ">
-            <i>
-                Some customers will win 2x fast chargers on Democracy Day 2026!
-            </i>
+        <p>
+            <a href="./public/computer training.html">Computer Training</a> |
+            <a href="./public/phone reviews.html">Phone Reviews</a>
         </p>
 
-        <!-- Button -->
-        <a href="./public/contact.html" style="
-            display:inline-block;
-            background:#0d6efd;
-            color:white;
-            text-decoration:none;
-            padding:14px 28px;
-            border-radius:10px;
-            font-size:1rem;
-            font-weight:bold;
-            box-shadow:0 4px 10px rgba(13,110,253,0.3);
-        ">
-            Contact Us
-        </a>
+        <h3>Find Us On Social Media</h3>
+
+        <div class="socials">
+
+            <a href="https://web.facebook.com/arockstarcompany/">
+                <img src="https://cdn.iconscout.com/icon/free/png-512/free-facebook-logo-icon-download-in-svg-png-gif-file-formats--fb-social-media-pack-logos-icons-721949.png?f=webp&w=256" alt="Facebook">
+            </a>
+
+            <a href="https://www.instagram.com/a_r_c_2025/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/600px-Instagram-Icon.png?20230822013318" alt="Instagram">
+            </a>
+
+            <a href="https://x.com/A_R_C_2025">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png?20230802142353" alt="X">
+            </a>
+
+            <a href="https://www.youtube.com/@arockstarcompany">
+                <img src="https://cdn.iconscout.com/icon/free/png-512/free-youtube-logo-icon-download-in-svg-png-gif-file-formats--social-media-pack-logos-icons-721990.png?f=webp&w=256" alt="Youtube">
+            </a>
+
+        </div>
 
     </div>
+
+    <footer>
+        <p>&copy; 2024 A Rockstar Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fade-in animation on scroll
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Dynamic greeting
+
+        const heading = document.querySelector("h1");
+
+        heading.addEventListener("mouseover", () => {
+            heading.innerHTML = "Welcome To ARC 🚀";
+        });
+
+        heading.addEventListener("mouseout", () => {
+            heading.innerHTML = "Welcome to ARC";
+        });
+    </script>
 
 </body>
 </html>
+```
