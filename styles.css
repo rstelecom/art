@@ -1,0 +1,194 @@
+```css
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    color:#333;
+    line-height:1.7;
+}
+
+/* Navigation */
+.nav{
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    padding:10px 18px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.nav a:hover{
+    background:white;
+    color:#2563eb;
+    transform:translateY(-3px);
+}
+
+/* Main Content */
+.center{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:15px;
+    animation:fadeIn 1s ease;
+}
+
+h2,h3,h4,h5,h6{
+    margin:15px 0;
+}
+
+#November-color{
+    color:#ff9800;
+    font-weight:bold;
+}
+
+.goldenrod{
+    color:goldenrod;
+    font-weight:bold;
+}
+
+/* Images */
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:10px auto;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+img:hover{
+    transform:scale(1.05);
+}
+
+/* Product Cards */
+ol li,
+ul li{
+    margin:10px 0;
+}
+
+.index > li{
+    background:white;
+    padding:20px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/* Links */
+a{
+    color:#2563eb;
+    text-decoration:none;
+    transition:.3s;
+}
+
+a:hover{
+    color:#ff9800;
+}
+
+/* Buttons */
+.promo-btn{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    padding:10px 20px;
+    border-radius:30px;
+}
+
+.promo-btn:hover{
+    background:#ff9800;
+    color:white;
+}
+
+/* Footer */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Scroll To Top Button */
+#topBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    display:none;
+    border:none;
+    background:#2563eb;
+    color:white;
+    padding:12px 16px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+#topBtn:hover{
+    background:#ff9800;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+
+    .nav{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .center{
+        padding:15px;
+    }
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+
+    img{
+        width:100%;
+    }
+}
+```
