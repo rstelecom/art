@@ -73,6 +73,10 @@ h2,h3,h4,h5,h6{
 }
 
 /* Images */
+#link-container{
+    height: 2px;
+}
+
 img{
     max-width:100%;
     height:auto;
@@ -81,10 +85,6 @@ img{
     border-radius:12px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
     transition:.4s;
-}
-
-#link-container{
-    height: 2px;
 }
 
 img:hover{
