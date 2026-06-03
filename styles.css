@@ -83,6 +83,10 @@ img{
     transition:.4s;
 }
 
+#link-container{
+    height: 20px;
+}
+
 img:hover{
     transform:scale(1.05);
 }
