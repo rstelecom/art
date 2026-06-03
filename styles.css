@@ -73,8 +73,9 @@ h2,h3,h4,h5,h6{
 }
 
 /* Images */
-#link-container{
-    height: 2px;
+#link-container img {
+    all: unset;
+    height: 20px;
 }
 
 img{
