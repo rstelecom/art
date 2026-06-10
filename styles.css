@@ -85,6 +85,7 @@ h3,h4,h5,h6{
 img{
     display:block;
    /* width:100%;*/
+    object-fit: cover;
     max-width:350px;
     margin:15px auto;
     border-radius:12px;
